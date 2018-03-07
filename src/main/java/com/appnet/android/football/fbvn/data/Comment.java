@@ -7,6 +7,7 @@ public class Comment {
     private long created_at;
     private String content;
     private User user;
+    private UserProfile user_profile;
 
     public int getId() {
         return id;
@@ -30,5 +31,9 @@ public class Comment {
 
     public String getContent() {
         return content;
+    }
+
+    public UserProfile getUserProfile() {
+        return user_profile;
     }
 }
