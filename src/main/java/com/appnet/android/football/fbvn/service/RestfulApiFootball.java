@@ -129,6 +129,14 @@ public interface RestfulApiFootball {
                                   @Field("object_type") String contentType,
                                   @Field("object_id") int objectId);
 
+
+    @POST("comments/report")
+    @FormUrlEncoded
+    Call<DefaultData> reportComment(@Header("Authorization") String authorization,
+                                  @Field("user_id") int userId,
+                                  @Field("content") String content,
+                                  @Field("comment_id") int contentId);
+
     @POST("comments")
     @FormUrlEncoded
     Call<DefaultData> postCommentBySofa(@Header("Authorization") String authorization,
