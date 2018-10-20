@@ -64,12 +64,12 @@ public interface RestfulApiFootball {
 
     @GET("newses?refresh=true")
     Call<ListNewsData> refreshNewsById(@Query("object_type") String objectType,
-                                    @Query("object_id") int objectId,
-                                    @Query("is_active") int active,
-                                    @Query("language") String language,
-                                    @Query("page") int page,
-                                    @Query("per_page") int limit,
-                                    @Query("order_by") String orderBy);
+                                       @Query("object_id") int objectId,
+                                       @Query("is_active") int active,
+                                       @Query("language") String language,
+                                       @Query("page") int page,
+                                       @Query("per_page") int limit,
+                                       @Query("order_by") String orderBy);
 
     @GET("newses")
     Call<ListNewsData> loadNewsBySofa(@Query("object_type") String objectType,
@@ -92,12 +92,12 @@ public interface RestfulApiFootball {
 
     @GET("newses?refresh=true")
     Call<ListNewsData> refreshNewsBySofa(@Query("object_type") String objectType,
-                                      @Query("sofa_id") int sofaId,
-                                      @Query("is_active") int active,
-                                      @Query("language") String language,
-                                      @Query("page") int page,
-                                      @Query("per_page") int limit,
-                                      @Query("order_by") String orderBy);
+                                         @Query("sofa_id") int sofaId,
+                                         @Query("is_active") int active,
+                                         @Query("language") String language,
+                                         @Query("page") int page,
+                                         @Query("per_page") int limit,
+                                         @Query("order_by") String orderBy);
 
     @GET("newses")
     Call<ListNewsData> loadNewsSofaByType(@Query("object_type") String objectType,
@@ -120,12 +120,12 @@ public interface RestfulApiFootball {
 
     @GET("newses?refresh=true")
     Call<ListNewsData> refreshNewsSofaByType(@Query("object_type") String objectType,
-                                          @Query("sofa_id") int sofaId,
-                                          @Query("is_active") int active,
-                                          @Query("type") String type,
-                                          @Query("page") int page,
-                                          @Query("per_page") int limit,
-                                          @Query("order_by") String orderBy);
+                                             @Query("sofa_id") int sofaId,
+                                             @Query("is_active") int active,
+                                             @Query("type") String type,
+                                             @Query("page") int page,
+                                             @Query("per_page") int limit,
+                                             @Query("order_by") String orderBy);
 
     @GET("newses")
     Call<ListNewsData> loadNewsByCategory(@Query("object_type") String objectType,
@@ -150,13 +150,13 @@ public interface RestfulApiFootball {
 
     @GET("newses?refresh=true")
     Call<ListNewsData> refreshNewsByCategory(@Query("object_type") String objectType,
-                                          @Query("object_id") int objectId,
-                                          @Query("term_id") int categoryId,
-                                          @Query("is_active") int active,
-                                          @Query("language") String language,
-                                          @Query("page") int page,
-                                          @Query("per_page") int limit,
-                                          @Query("order_by") String orderBy);
+                                             @Query("object_id") int objectId,
+                                             @Query("term_id") int categoryId,
+                                             @Query("is_active") int active,
+                                             @Query("language") String language,
+                                             @Query("page") int page,
+                                             @Query("per_page") int limit,
+                                             @Query("order_by") String orderBy);
 
     @GET("newses/get/{news_id}")
     Call<NewsData> loadNewsDetail(@Path("news_id") int newsId);
@@ -209,9 +209,9 @@ public interface RestfulApiFootball {
 
     @GET("comments?refresh=true")
     Call<CommentsData> refreshComments(@Query("object_type") String objectType,
-                                    @Query("object_id") int objectId,
-                                    @Query("page") int page,
-                                    @Query("per_page") int limit);
+                                       @Query("object_id") int objectId,
+                                       @Query("page") int page,
+                                       @Query("per_page") int limit);
 
     @GET("comments")
     Call<CommentsData> loadCommentsBySofa(@Query("object_type") String objectType,
@@ -228,9 +228,9 @@ public interface RestfulApiFootball {
 
     @GET("comments?refresh=true")
     Call<CommentsData> refreshCommentsBySofa(@Query("object_type") String objectType,
-                                          @Query("sofa_id") int sofaId,
-                                          @Query("page") int page,
-                                          @Query("per_page") int limit);
+                                             @Query("sofa_id") int sofaId,
+                                             @Query("page") int page,
+                                             @Query("per_page") int limit);
 
     @POST("comments")
     @FormUrlEncoded
@@ -244,9 +244,9 @@ public interface RestfulApiFootball {
     @POST("comments/report")
     @FormUrlEncoded
     Call<DefaultData> reportComment(@Header("Authorization") String authorization,
-                                  @Field("user_id") int userId,
-                                  @Field("content") String content,
-                                  @Field("comment_id") int contentId);
+                                    @Field("user_id") int userId,
+                                    @Field("content") String content,
+                                    @Field("comment_id") int contentId);
 
     @POST("comments")
     @FormUrlEncoded
