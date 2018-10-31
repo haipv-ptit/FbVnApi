@@ -13,12 +13,11 @@ import retrofit2.http.Query;
 
 public interface RestfulApiFootballAuto {
 
-    @GET("news?app=manutd&category=latest")
-    Call<NewsDataAuto> loadNewsLatest();
-    @GET("news?app=manutd&category=top")
-    Call<NewsDataAuto> loadNewsTrend();
-    @GET("news?app=manutd&category=video")
-    Call<NewsDataAuto> loadNewsVideo();
+    @GET("news")
+    Call<NewsDataAuto> loadNews(@Query("app") String team,
+                                      @Query("category") String category,
+                                      @Query("lang") String language);
+
     @GET("news/detail")
     Call<DetailNewsDataAuto> loadNewsDetail(@Query("url") String url);
 
