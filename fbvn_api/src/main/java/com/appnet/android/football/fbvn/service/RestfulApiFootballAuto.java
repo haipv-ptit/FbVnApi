@@ -4,6 +4,7 @@ package com.appnet.android.football.fbvn.service;
 import com.appnet.android.football.fbvn.data.DetailNewsDataAuto;
 import com.appnet.android.football.fbvn.data.NewsDataAuto;
 import com.appnet.android.football.fbvn.data.NewsData;
+import com.appnet.android.football.fbvn.data.UserIpData;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -20,5 +21,7 @@ public interface RestfulApiFootballAuto {
 
     @GET("news/detail")
     Call<DetailNewsDataAuto> loadNewsDetail(@Query("url") String url);
+    @GET("geoip/me/")
+    Call<UserIpData> loadUserIp(@Header("Cache-Control") String cacheControl);
 
 }
