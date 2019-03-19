@@ -23,5 +23,7 @@ public interface RestfulApiFootballAuto {
     Call<DetailNewsDataAuto> loadNewsDetail(@Query("url") String url);
     @GET("geoip/me/")
     Call<UserIpData> loadUserIp(@Header("Cache-Control") String cacheControl);
+    @GET("match/video")
+    Call<DetailNewsDataAuto> loadMatchVideo(@Query("home") String home, @Query("away") String away);
 
 }
